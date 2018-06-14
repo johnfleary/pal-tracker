@@ -4,3 +4,5 @@ applications:
   path: build/libs/pal-tracker.jar
   routes:
   - route: lab-review.apps.evans.pal.pivotal.io
+  services:
+  - tracker-database
