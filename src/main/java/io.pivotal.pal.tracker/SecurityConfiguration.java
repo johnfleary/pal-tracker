@@ -9,12 +9,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Value("${HTTPS_DISABLED}")
+    @Value("${HTTPS.DISABLED}")
     private boolean sslIndicator;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        if (sslIndicator) {
+        if (!sslIndicator) {
             http.requiresChannel().anyRequest().requiresSecure();
         }
         http
